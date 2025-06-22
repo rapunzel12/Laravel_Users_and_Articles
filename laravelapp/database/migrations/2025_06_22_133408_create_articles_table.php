@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId(column:'user_id')
+                ->constrained(table:'users')
+                ->cascadeOnDelete();
+
+            $table->string(column:'title');
+            $table->longText(column:'excerpt')->nullable(false);
+            $table->longText(column:'description');
+            $table->integer(column:'min_to_read');
+            
             $table->timestamps();
         });
     }

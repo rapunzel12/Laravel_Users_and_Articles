@@ -1,7 +1,7 @@
 <div>
     Articles
 
-    @foreach ($aritcles as $article)
+    @foreach ($articles as $article)
         {{  $article->title }}
     @endforeach
 </div>

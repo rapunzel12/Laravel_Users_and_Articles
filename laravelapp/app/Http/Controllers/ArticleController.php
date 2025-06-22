@@ -7,13 +7,12 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
+    public function index(){
+
+        // $posts = Article::all();
+
         return view('articles.index', [
-            'articles'=>Article::paginate()
+            'articles' => Article::paginate()
         ]);
     }
 
